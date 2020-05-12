@@ -1,0 +1,29 @@
+{
+  "name": "muxbot",
+  "version": "0.1.0",
+  "description": "MuXBoT para Discord de Rol",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "keywords": [
+    "bot",
+    "discord",
+    "rpg",
+    "rol",
+    "dados",
+    "dices"
+  ],
+  "author": "MuXeD",
+  "license": "MIT",
+  "dependencies": {
+    "@discordjs/opus": "^0.3.2",
+    "discord.js": "^12.2.0",
+    "dotenv": "^8.2.0",
+    "enmap": "^5.2.4",
+    "ffmpeg-static": "^4.2.1",
+    "youtube-search": "^1.1.4",
+    "ytdl-core": "^2.1.2"
+  }
+}
