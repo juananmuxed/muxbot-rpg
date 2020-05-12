@@ -71,7 +71,9 @@ exports.run = async (client,message,args) => {
                         break
                 }
             }
-            fields.push({name:'Sum',value:sum})
+            if(dices !== 1){
+                fields.push({name:'Sum',value:sum})
+            }
             msg = message.author.username + ' rolls ' + dices + ' of ' + faces + ' 🎲'
         }
         title = 'Roll ' + dices + 'D' + faces
