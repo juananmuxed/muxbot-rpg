@@ -23,6 +23,7 @@ exports.run = async (client, message, args) => {
     }
     
     const songArg = await search(args.join(' '), opts)
+    if(songArg.results.length == 0) {message.delete({timeout:4000}) ; return musicchannel.send('Incorrect link! No search results!').then(message => message.delete({timeout:4000}))}
     const songURL = songArg.results[0].link
     const songInfo = await ytdl.getInfo(songURL)
 
