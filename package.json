@@ -1,9 +1,9 @@
 {
   "name": "muxbot",
-  "version": "1.2.0",
+  "version": "2.0.0",
   "description": "MuXBoT para Discord de Rol",
   "main": "index.js",
-  "releaseversion": "v1.2 Jinki Minkli",
+  "releaseversion": "v2.0.0 Jinki Minkli",
   "scripts": {
     "start": "node index.js",
     "dev": "nodemon index.js"
