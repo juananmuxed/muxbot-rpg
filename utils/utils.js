@@ -1,22 +1,24 @@
 async function launchDice (dices , faces) {
     try {
-        let results = []
-        for (let i = 0; i < dices; i++) {
-            let result = Math.floor((Math.random() * faces) + 1)
-            results.push(result)
-        }
-        return results
+        return Array.from({length:dices}).fill(1).map( (v) => {
+            return v * Math.floor((Math.random() * faces) + 1);
+        });
     } catch (error) {
-        return error
+        return error;
     }
 }
 
 async function sleep(s){
     return new Promise((resolve,reject) => {
-         setTimeout(() => {
-              resolve(true)
-         },1000 * s)
-    })
+        setTimeout(() => {
+            resolve(true);
+        },1000 * s);
+    });
 }
 
-module.exports = { launchDice , sleep }
+function _(string, lang) {
+    file = lang != 'en' ? require('./../language/' + lang + '.json') : null ;
+    return !file || !file.strings[string] ? string : file.strings[string];
+}
+
+module.exports = { launchDice , sleep, _ }

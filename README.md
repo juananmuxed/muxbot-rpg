@@ -19,11 +19,11 @@ MuXBoT is a little bot for play in Discord to RPG games. A project to roll dices
 Used to roll all number of dices of any type (included unorthodox numbers like 17).
 You have an option to launch dices secretly with the last arguments. If not, is public.
 
-Two languages, english and spanish. The bot answer you in de command language. It's polite
+Two languages, english and spanish. The bot answer you in de command language. It's polite.
 
 ```bash
-!dice <roll> <modificators> <secret>
-!dado <lanzamineto> <modificadores> <secreto> => Spanish Version
+!dice <roll> <modificators> <secret> // Aliases !roll !launch
+!dado <lanzamineto> <modificadores> <secreto> => Spanish Version 🇪🇸
 
 default: !dice = !dice 1d6 +0
 ```
@@ -52,7 +52,7 @@ If you need launch a secret dice with no modifications (i.e.)
 
 ```
 !dice 1d10 +0 secret
-!dado 1d10 +0 secreto // Spanish version
+!dado 1d10 +0 secreto // Spanish version 🇪🇸
 ```
 
 ### 🎷 **Music**
@@ -143,14 +143,20 @@ If you deploy your bot in Heroku or other services, this Variables must be set m
 
 ---
 
+## 🈳 Languages
+The bot know 2 languages, English and Spanish, but you can add any .json Language folder with the strings and commands to translate. 
+
 ## 🧠 Usage
 **Now we are ready to run the software in local**. Open your terminal.
 ``` bash
 # Terminal
 $ cd /yourprojectpath
-$ node index.js
+# install the dependencies
+$ npm install
+# run node 
+$ npm run start
 # or if you have nodemon and need to develop
-$ nodemon index.js 
+$ npm run dev 
 ```
 
 ---

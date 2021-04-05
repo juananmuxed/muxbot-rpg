@@ -1,12 +1,12 @@
 {
   "name": "muxbot",
-  "version": "0.1.0",
+  "version": "1.2.0",
   "description": "MuXBoT para Discord de Rol",
   "main": "index.js",
-  "releaseversion": "v1.1 The Commedian",
+  "releaseversion": "v1.2 Jinki Minkli",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js"
+    "start": "node index.js",
+    "dev": "nodemon index.js"
   },
   "keywords": [
     "bot",
@@ -19,12 +19,11 @@
   "author": "MuXeD",
   "license": "MIT",
   "dependencies": {
-    "@discordjs/opus": "^0.3.2",
     "discord.js": "^12.2.0",
     "dotenv": "^8.2.0",
     "enmap": "^5.2.4",
     "ffmpeg-static": "^4.2.1",
     "youtube-search": "^1.1.4",
-    "ytdl-core": "^2.1.2"
+    "ytdl-core": "^4.5.0"
   }
 }
