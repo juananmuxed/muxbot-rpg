@@ -74,7 +74,7 @@ const getInteraction =
     const roll = new RpgUtils(faces);
     const diceRoll = await roll.rollDicesAsync(dices);
     const modRolls = roll.modifyRolls(mod || 0);
-    const sum = roll.sumRolls() as number;
+    const sum = roll.sumRolls() || 0;
 
     const embed = new MessageEmbed();
     embed.setTitle(_("Rolling dices", lang));
@@ -94,7 +94,7 @@ const getInteraction =
       );
     }
     embed.addField(_("Sum", lang), sum.toString());
-    if (mod && Array.isArray(modRolls)) {
+    if (mod) {
       embed.addField(
         _("Modified sum", lang),
         (modRolls as number[])
