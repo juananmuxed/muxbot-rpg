@@ -163,10 +163,9 @@ $ npm run dev
 
 ## 📂 Repositories
 - [Discord.js](https://github.com/discordjs/discord.js)
+- [DisTube](https://distube.js.org)
+- [RPG Utils](https://www.npmjs.com/package/@muxed/rpg-utils)
 - [FFMPEG](https://www.npmjs.com/package/ffmpeg-static)
-- [Enmap](https://www.npmjs.com/package/enmap)
-- [YTDL](https://www.npmjs.com/package/ytdl-core)
-- [YoutubeSearch](https://www.npmjs.com/package/youtube-search)
 - [dotenv](https://www.npmjs.com/package/dotenv)
 
 ---
