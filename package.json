@@ -1,12 +1,11 @@
 {
   "name": "muxbot",
   "version": "2.0.0",
-  "description": "MuXBoT para Discord de Rol",
+  "description": "MuXBoT RPG Discord bot",
   "main": "index.js",
-  "releaseversion": "v2.0.0 Jinki Minkli",
   "scripts": {
-    "start": "node dist/index.js",
-    "dev": "tsc --watch",
+    "dev": "nodemon -e ts --exec \"npm run compile\"",
+    "compile": "tsc && node dist/index.js",
     "build": "tsc"
   },
   "keywords": [
@@ -23,17 +22,20 @@
     "@discordjs/builders": "^0.15.0",
     "@discordjs/opus": "^0.5.0",
     "@discordjs/rest": "^0.5.0",
+    "@discordjs/voice": "^0.10.0",
+    "@distube/yt-dlp": "^1.0.2",
     "@muxed/rpg-utils": "^1.5.0",
     "discord-api-types": "^0.34.0",
     "discord.js": "^13.8.0",
+    "distube": "^3.3.4",
     "dotenv": "^8.2.0",
     "enmap": "^5.2.4",
     "ffmpeg-static": "^4.2.1",
-    "youtube-search": "^1.1.4",
-    "ytdl-core": "^4.5.0"
+    "libsodium-wrappers": "^0.7.10"
   },
   "devDependencies": {
     "@types/node": "^18.0.0",
+    "ts-node": "^10.8.2",
     "typescript": "^4.7.4"
   }
 }

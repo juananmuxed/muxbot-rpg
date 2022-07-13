@@ -8,6 +8,7 @@ import {
 import "dotenv/config";
 import { ready } from "./events/ready";
 import { interactionCreate } from "./events/interactionCreate";
+import { clientDisTube } from "./events/clientDisTube";
 
 export const queue = new Map();
 const options: ClientOptions = {
@@ -15,6 +16,7 @@ const options: ClientOptions = {
     Intents.FLAGS.GUILDS,
     Intents.FLAGS.GUILD_MESSAGES,
     Intents.FLAGS.GUILD_MESSAGE_REACTIONS,
+    Intents.FLAGS.GUILD_VOICE_STATES,
   ],
 };
 const client = new Client(options);
@@ -30,5 +32,9 @@ client.commands = new Collection();
     async (interaction) => await interactionCreate(interaction)
   );
 
+  clientDisTube();
+
   client.login(process.env.DISCORD_TOKEN);
 })();
+
+export { client };

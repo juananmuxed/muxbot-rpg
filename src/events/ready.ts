@@ -28,7 +28,7 @@ export const ready = async (client: Client): Promise<void> => {
   client.user?.setPresence({
     activities: [
       {
-        name: `${client.users.cache.size} souls. 🤖`,
+        name: "🤖",
         type: "WATCHING",
       },
     ],

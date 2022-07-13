@@ -29,3 +29,5 @@ export default async (
   message.delete();
   musicChannel.send("🛑 " + _("Paused song.", lang));
 };
+
+sdfdsf;

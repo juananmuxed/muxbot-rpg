@@ -2,7 +2,7 @@ import {
   SlashCommandBuilder,
   SlashCommandSubcommandsOnlyBuilder,
 } from "@discordjs/builders";
-import { CommandInteraction } from "discord.js";
+import { Client, CommandInteraction } from "discord.js";
 import { readdirSync } from "fs";
 import path from "path";
 import { LanguageModule } from "./ILanguage";
@@ -14,7 +14,10 @@ export interface Command {
         "addSubcommandGroup" | "addSubcommand"
       >
     | SlashCommandSubcommandsOnlyBuilder;
-  run: (interaction: CommandInteraction) => Promise<void>;
+  run: (
+    interaction: CommandInteraction,
+    client: Client
+  ) => Promise<void>;
 }
 
 export const getCommands = (
@@ -28,7 +31,10 @@ export const getCommands = (
   >,
   interaction: (
     lang?: string
-  ) => (interaction: CommandInteraction) => Promise<void>
+  ) => (
+    interaction: CommandInteraction,
+    client: Client
+  ) => Promise<void>
 ) => {
   const commands: Command[] = [];
   commands.push({
