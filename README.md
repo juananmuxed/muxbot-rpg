@@ -168,6 +168,9 @@ $ npm run dev
 - [FFMPEG](https://www.npmjs.com/package/ffmpeg-static)
 - [dotenv](https://www.npmjs.com/package/dotenv)
 
+## 🚀 Deployment utils
+- [PM2](https://pm2.keymetrics.io/)
+
 ---
 
 ## ☕️ Buy Me a Coffee
