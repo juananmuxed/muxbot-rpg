@@ -1,0 +1,33 @@
+export default {
+  commands: {
+    dice: "dado",
+    pause: "pausar",
+    roll: "lanzar",
+    play: "reproducir",
+    resume: "continuar",
+    skip: "saltar",
+    stop: "parar",
+    volume: "volumen",
+    launch: "lanzar",
+    queue: "lista",
+  },
+  strings: {
+    "🎲 Launch dices": "🎲 Lanza dados",
+    "Dices number. By default 1.": "Numero de dados. Por defecto 1.",
+    "Faces number. By default 6.": "Numero de caras. Por defecto 6.",
+    "Roll modification. Default 0.":
+      "Modificación de lanzamiento. Por defecto 0.",
+    "Just for you.": "Solo para tí.",
+    dices: "dados",
+    faces: "caras",
+    modification: "modificación",
+    secret: "secreto",
+    "Rolling dices": "Lanzando los dados",
+    Roller: "Lanzador",
+    roll: "lanza",
+    Results: "Resultados",
+    "Modified results": "Resultados modificados",
+    Sum: "Suma",
+    "Modified sum": "Suma modificada",
+  },
+};
