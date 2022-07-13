@@ -22,15 +22,17 @@ You have an option to launch dices secretly with the last arguments. If not, is 
 Two languages, english and spanish. The bot answer you in de command language. It's polite.
 
 ```bash
-!dice <roll> <modificators> <secret> // Aliases !roll !launch
-!dado <lanzamineto> <modificadores> <secreto> => Spanish Version 🇪🇸
-
-default: !dice = !dice 1d6 +0
+/dice 
+Options
+dices: number of dices
+faces: number of faces
+modification: number positive or negative to modify rolls
+secret: just you see the results
 ```
 
 **Examples**
 ```bash
-!dice 3d20 +2 => Roll 3 dices of 20 and Add +2
+/dice dices: 3 faces: 20
 ```
 
 🤖 _Output_
@@ -47,58 +49,51 @@ Sum
 25+2=27
 ```
 
-The arguments is needed in order.
-If you need launch a secret dice with no modifications (i.e.)
-
-```
-!dice 1d10 +0 secret
-!dado 1d10 +0 secreto // Spanish version 🇪🇸
-```
-
 ### 🎷 **Music**
 This commands is for ambient all your games. Use Youtube and your ****ing imagination.
 You can add music or search directly. 
 
 This add to queue
 ```bash
-!play <link>/<searchedwords>
-
-default: !play = first searched video from YT. Not recomended
+/play
+Options:
+query: a query search
 ```
-This skip the actual song, if not other song, is like !stop command
+This skip the actual song, if not other song, is like /stop command
 ```bash
-!skip
+/skip
 ```
 This stop the queue and finalize the stream.
 ```bash
-!stop
+/stop
 ```
-This pause the actual song. Use !resume to continue.
+This pause the actual song. Use /resume to continue.
 ```bash
-!pause
+/pause
 ```
 This resume the actual song.
 ```bash
-!resume
+/resume
 ```
 This show a list of all the songs in the queue and the song actually sound.
 ```bash
-!queue
+/queue
 ```
 Set the volume of actual song. The ```<volume>``` must be between 1 and 100
 ```bash
-!volume <volume>
+/volume <volume>
 ```
 
 🇪🇸 **Versiones en Español**
 ```bash
-!reproducir <enlace>/<busqueda>
-!saltar
-!parar
-!pausa
-!continuar
-!lista
-!volumen <volumen>
+/dado
+/reproducir
+/saltar
+/parar
+/pausa
+/continuar
+/lista
+/volumen
 ```
 El **BoT** te contesta en Español 😱
 
@@ -133,30 +128,25 @@ First we are going to create a file that contains our variables, this file must 
 ``` env
 DISCORD_TOKEN=DISCORD_GENERATED_FOR_THE_BOT
 GUILD_ID=ID_FROM_YOUR_SERVER_DISCORD
-ROL_CHANNEL=CHANNEL_ID_FOR_DICE_COMMANDS
-MUSIC_CHANNEL=CHANNEL_ID_FOR_MUSIC_COMMANDS
-RADIO_CHANNEL=VOIC_CHANNEL_ID_FOR_STREAM_MUSIC
-KEY_YOUTUBE=KEY_API_FOR_YT
-PREFIX=YOUR_PREFIX
 ```
 If you deploy your bot in Heroku or other services, this Variables must be set manually in the configuration of the project.
 
 ---
 
 ## 🈳 Languages
-The bot know 2 languages, English and Spanish, but you can add any .json Language folder with the strings and commands to translate. 
+The bot know 2 languages, English and Spanish, but you can add any .ts Language folder with the strings and commands to translate. 
 
 ## 🧠 Usage
 **Now we are ready to run the software in local**. Open your terminal.
+
+**NOTE**: Nodemon is required `npm i -g nodemon`.
 ``` bash
 # Terminal
 $ cd /yourprojectpath
 # install the dependencies
 $ npm install
 # run node 
-$ npm run start
-# or if you have nodemon and need to develop
-$ npm run dev 
+$ npm run dev
 ```
 
 ---
@@ -170,11 +160,6 @@ $ npm run dev
 
 ## 🚀 Deployment utils
 - [PM2](https://pm2.keymetrics.io/)
-
----
-
-## ☕️ Buy Me a Coffee
-[![ko-fi](https://www.ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/U7U21M2BE)
 
 ---
 
