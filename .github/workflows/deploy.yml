@@ -18,6 +18,5 @@ jobs:
           script: |
             cd ${{ secrets.PROJECT_PATH }}
             git pull
-            npm install
-            git restore package-lock.json
-            npm run build
+            docker build . -t muxbot
+            docker run -d --rm muxbot
