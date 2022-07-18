@@ -17,7 +17,7 @@ class Constants {
   static readonly SECRET_NAME = "secret";
 }
 
-const getSlashCommandRoll = (
+const getSlashCommand = (
   name: string,
   lang: string = "en"
 ): Omit<
@@ -26,26 +26,26 @@ const getSlashCommandRoll = (
 > => {
   return new SlashCommandBuilder()
     .setName(_(name, lang))
-    .setDescription(_("🎲 Launch dices", lang))
+    .setDescription(`🎲 ${_("Launch dices", lang)}`)
     .addNumberOption((option) =>
       option
         .setName(_(Constants.DICES_NAME, lang))
-        .setDescription(_("Dices number. By default 1.", lang))
+        .setDescription(_("Dices number (default 1)", lang))
     )
     .addNumberOption((option) =>
       option
         .setName(_(Constants.FACES_NAME, lang))
-        .setDescription(_("Faces number. By default 6.", lang))
+        .setDescription(_("Faces number (default 6)", lang))
     )
     .addNumberOption((option) =>
       option
         .setName(_(Constants.MODIFICATION_NAME, lang))
-        .setDescription(_("Roll modification. Default 0.", lang))
+        .setDescription(_("Roll modification", lang))
     )
     .addBooleanOption((option) =>
       option
         .setName(_(Constants.SECRET_NAME, lang))
-        .setDescription(_("Just for you.", lang))
+        .setDescription(_("Just for you", lang))
     );
 };
 
@@ -84,7 +84,7 @@ const getInteraction =
       iconURL: interaction.client.user?.displayAvatarURL(),
     });
     embed.setDescription(
-      `${user.tag} ${_("roll", lang)} ${dices}d${faces} 🎲`
+      `${user} ${_("roll", lang)} ${dices}d${faces} 🎲`
     );
     embed.addField(_("Results", lang), JSON.stringify(diceRoll));
     if (mod) {
@@ -115,7 +115,7 @@ const getInteraction =
 
 const commands: Command[] = getCommands(
   Constants.COMMAND_NAME,
-  getSlashCommandRoll,
+  getSlashCommand,
   getInteraction
 );
 
