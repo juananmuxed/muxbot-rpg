@@ -14,7 +14,7 @@ class Constants {
   static readonly QUERY_NAME = "query";
 }
 
-const getSlashCommandPlay = (
+const getSlashCommand = (
   name: string,
   lang: string = "en"
 ): Omit<
@@ -23,11 +23,11 @@ const getSlashCommandPlay = (
 > => {
   return new SlashCommandBuilder()
     .setName(_(name, lang))
-    .setDescription(_("🎷 Music play", lang))
+    .setDescription(`🎷 ${_("Music play", lang)}`)
     .addStringOption((option) =>
       option
         .setName(_(Constants.QUERY_NAME, lang))
-        .setDescription(_("URL or YT code.", lang))
+        .setDescription(_("URL or YT code", lang))
     );
 };
 
@@ -40,7 +40,7 @@ const getInteraction =
 
     if (!query)
       return interaction.reply({
-        content: _("You need a query to search.", lang),
+        content: `⛔ ${_("You need a query to search", lang)}`,
         ephemeral: true,
       });
 
@@ -49,29 +49,40 @@ const getInteraction =
 
     if (!voiceChannel)
       return interaction.reply({
-        content: _("You must be in a voice channel.", lang),
+        content: `⛔ ${_("You must be in a voice channel", lang)}`,
         ephemeral: true,
       });
 
+    client.lang = lang;
+
     try {
-      client.disTube.play(voiceChannel as VoiceBasedChannel, query, {
-        textChannel: channel as any,
-        member: member as GuildMember,
+      await interaction.deferReply({
+        ephemeral: true,
       });
-      return interaction.reply({
-        content: _("😎 Request received", lang),
+
+      await client.disTube.play(
+        voiceChannel as VoiceBasedChannel,
+        query,
+        {
+          textChannel: channel as any,
+          member: member as GuildMember,
+        }
+      );
+
+      return interaction.editReply({
+        content: `😎 ${_("Song added", lang)}`,
       });
     } catch (e) {
       const errorEmbed = new MessageEmbed()
         .setColor("RED")
-        .setDescription(_(`🚨 Alert: ${e}`, lang));
+        .setDescription(`🚨 ${_("Alert", lang)}: ${e}`);
       return interaction.reply({ embeds: [errorEmbed] });
     }
   };
 
 const commands: Command[] = getCommands(
   Constants.COMMAND_NAME,
-  getSlashCommandPlay,
+  getSlashCommand,
   getInteraction
 );
 
