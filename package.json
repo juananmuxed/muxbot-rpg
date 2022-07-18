@@ -1,6 +1,6 @@
 {
   "name": "muxbot",
-  "version": "3.0.1",
+  "version": "3.0.2",
   "description": "MuXBoT RPG Discord bot",
   "main": "index.js",
   "scripts": {
