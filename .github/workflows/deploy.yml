@@ -18,6 +18,6 @@ jobs:
           script: |
             cd ${{ secrets.PROJECT_PATH }}
             git pull
-            docker build . -t muxbot
+            docker build . -t muxbot-container
             docker stop muxbot
-            docker run -d --restart always --name muxbot muxbot
+            docker run -d --restart always --name muxbot muxbot-container
