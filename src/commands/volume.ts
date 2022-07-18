@@ -43,14 +43,13 @@ const getInteraction =
         content: `⛔ ${_("There is no queue", lang)}`,
       });
 
-    let volume =
-      interaction.options.getNumber(
-        _(Constants.PERCENT_NAME, lang)
-      ) || "";
+    let volume = interaction.options.getNumber(
+      _(Constants.PERCENT_NAME, lang)
+    );
 
-    if (volume > 100) volume = 100;
-    if (volume < 0) volume = 0;
     if (!volume) volume = 50;
+    if (volume > 100) volume = 100;
+    if (volume < 1) volume = 1;
 
     client.disTube.setVolume(voiceChannel, Number(volume));
 
