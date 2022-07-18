@@ -79,9 +79,19 @@ This show a list of all the songs in the queue and the song actually sound.
 ```bash
 /queue
 ```
-Set the volume of actual song. The ```<volume>``` must be between 1 and 100
+Set the volume of actual song.
 ```bash
-/volume <volume>
+/volume
+Options
+percent: 1 to 100
+```
+Set the volume of actual song.
+```bash
+/repeat
+Button options:
+Disable
+Repeat all
+Repeat one
 ```
 
 🇪🇸 **Versiones en Español**
@@ -94,6 +104,7 @@ Set the volume of actual song. The ```<volume>``` must be between 1 and 100
 /continuar
 /lista
 /volumen
+/repetir
 ```
 El **BoT** te contesta en Español 😱
 
@@ -114,8 +125,16 @@ $ git clone https://github.com/juananmuxed/muxbot-rpg.git
 
 # Change the working directory to muxbot-rpg
 $ cd muxbot-rpg
+
+# Install dependencies
+$ npm install
+
+# Create the build
+$ npm run build
+
+# Use build/index.js as initial file
+$ node build/index.js
 ```
-If you are interested in up to Heroku or other services. You need to push a master to Heroku and configure the variables from .env in Heroku (i.e.)
 
 ---
 
@@ -136,10 +155,11 @@ If you deploy your bot in Heroku or other services, this Variables must be set m
 ## 🈳 Languages
 The bot know 2 languages, English and Spanish, but you can add any .ts Language folder with the strings and commands to translate. 
 
-## 🧠 Usage
+## 🧠 Development
 **Now we are ready to run the software in local**. Open your terminal.
 
 **NOTE**: Nodemon is required `npm i -g nodemon`.
+
 ``` bash
 # Terminal
 $ cd /yourprojectpath
@@ -160,6 +180,7 @@ $ npm run dev
 
 ## 🚀 Deployment utils
 - [PM2](https://pm2.keymetrics.io/)
+- [Docker](https://www.docker.com/)
 
 ---
 
