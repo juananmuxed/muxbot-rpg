@@ -16,10 +16,7 @@ export const ready = async (client: Client): Promise<void> => {
   );
 
   await rest.put(
-    Routes.applicationGuildCommands(
-      client.user?.id || "missing id",
-      process.env.GUILD_ID as string
-    ),
+    Routes.applicationCommands(client.user?.id || "missing id"),
     { body: commandData }
   );
 
