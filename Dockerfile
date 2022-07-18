@@ -6,6 +6,8 @@ COPY . .
 
 RUN rm -rf node_modules
 
+RUN rm -rf dist
+
 RUN apt-get update || : && apt-get install python -y
 
 RUN apt-get -y install ffmpeg
