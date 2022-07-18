@@ -7,7 +7,7 @@
     </sub>
 </p>
 
-![Version](https://img.shields.io/github/package-json/releaseversion/juananmuxed/muxbot-rpg?label=Version&logo=github) ![Release](https://img.shields.io/github/v/release/juananmuxed/muxbot-rpg?include_prereleases&label=Release&logo=github) [![License](https://img.shields.io/github/license/juananmuxed/muxbot-rpg?label=License)](https://github.com/juananmuxed/muxbot-rpg/blob/master/LICENSE) [![Discord](https://img.shields.io/discord/324463341819133953?color=purple&label=Discord&logo=discord)](https://discord.gg/UnBtckE) 
+![Release](https://img.shields.io/github/v/release/juananmuxed/muxbot-rpg?include_prereleases&label=Release&logo=github) ![Version](https://img.shields.io/github/workflow/status/juananmuxed/muxbot-rpg/Deploy%20to%20web%20server/master?label=Build&logo=github) [![License](https://img.shields.io/github/license/juananmuxed/muxbot-rpg?label=License)](https://github.com/juananmuxed/muxbot-rpg/blob/master/LICENSE) [![Discord](https://img.shields.io/discord/324463341819133953?color=purple&label=Discord&logo=discord)](https://discord.gg/UnBtckE) 
 ---
 
 # 🤔 What is MuXBoT RPG
