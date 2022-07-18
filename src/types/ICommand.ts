@@ -2,7 +2,8 @@ import {
   SlashCommandBuilder,
   SlashCommandSubcommandsOnlyBuilder,
 } from "@discordjs/builders";
-import { Client, CommandInteraction } from "discord.js";
+import { APIMessage } from "discord-api-types/v9";
+import { Client, CommandInteraction, Message } from "discord.js";
 import { readdirSync } from "fs";
 import path from "path";
 import { LanguageModule } from "./ILanguage";
@@ -17,7 +18,7 @@ export interface Command {
   run: (
     interaction: CommandInteraction,
     client: Client
-  ) => Promise<void>;
+  ) => Promise<void | APIMessage | Message<boolean>>;
 }
 
 export const getCommands = (
@@ -34,7 +35,7 @@ export const getCommands = (
   ) => (
     interaction: CommandInteraction,
     client: Client
-  ) => Promise<void>
+  ) => Promise<void | APIMessage | Message<boolean>>
 ) => {
   const commands: Command[] = [];
   commands.push({
