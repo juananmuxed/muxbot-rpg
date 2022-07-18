@@ -33,3 +33,8 @@ export const randomColor = (brightness: number = 120) => {
     randomChannel(brightness)
   );
 };
+
+export const secondConvert = (n: number): string => {
+  if (n < 3600) return new Date(n * 1000).toISOString().slice(14, 19);
+  return new Date(n * 1000).toISOString().slice(11, 19);
+};
